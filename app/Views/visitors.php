@@ -1,33 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
     <title>Visitors</title>
-<!--  -->
-<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+     <!-- Custom fonts for this template-->
+     <link href="<?=base_url();?>/stemp/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+       <link
+           href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+           rel="stylesheet">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script> -->
-    <!--  -->
-    <!-- Custom fonts for this template-->
-    <link href="<?=base_url();?>/stemp/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="<?=base_url();?>/stemp/css/sb-admin-2.min.css" rel="stylesheet">
-
+       <!-- Custom styles for this template-->
+       <link href="<?=base_url();?>/stemp/css/sb-admin-2.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -41,9 +28,9 @@
                 <a class="d-flex align-items-center justify-content-center">
                     <li><img src="<?=base_url();?>/stemp/img/taguig.png" style="width: 90px; height: 90px"></li>
                 </a>
-        
+
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-text mx-3">Admin</div>
             </a>
 
@@ -51,11 +38,11 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="http://localhost/clas/public/">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
-            </li>
+            </li> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -98,6 +85,12 @@
             </div>
 
             <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="<?=base_url();?>/schedules">
+                    <i class="fas fa-fw fa-calendar"></i>
+                    <span>Schedules</span></a>
+            </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="<?=base_url();?>/courses">
                 <!-- <a href="<?=base_url();?>/courses" class="list-group-item list-group-item-action bg-light"><i class="fas fa-address-card"></i> Course</a> -->
@@ -167,7 +160,7 @@
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-                        
+
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -175,14 +168,14 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Mr. Lim</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
                                 <img class="img-profile rounded-circle"
                                     src="<?=base_url();?>/stemp/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <!-- <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
@@ -193,7 +186,7 @@
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Activity Log
-                                </a>
+                                </a> -->
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -213,8 +206,8 @@
 
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h4 class="h3 mb-0 text-gray-800">Time-in | Time-out Record</h4>
-                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                    <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
                 </div>
 
 
@@ -226,21 +219,21 @@
                         <a href="<?php echo base_url('visitors/timeout') ?>" class="btn btn-sm btn-outline-primary">Time Out</a>
                         <!-- <a class="dropdown-item" href="#" data-toggle="modal" data-target="myModal"> -->
                         </h6>
-                        
-                        
+
+
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-bordered" id="students" width="100%" cellspacing="0">
+                            <table class="table table-bordered" id="visitors" width="100%" cellspacing="0">
                                 <thead>
                                     <tr class="text-center">
                                     <th>Name</th>
                                     <th>Purpose</th>
                                     <th>Laboratory</th>
                                     <th>Time In</th>
-                                    <th>Time Out</th>                   
+                                    <th>Time Out</th>
                                     </tr>
-                                    
+
                                 </thead>
                                 <tbody>
                                     <?php if($visitors): ?>
@@ -255,15 +248,6 @@
                                   <?php endforeach; ?>
                                   <?php endif; ?>
                                 </tbody>
-                                <tfoot>
-                                    <tr class="text-center">
-                                    <th>Name</th>
-                                    <th>Purpose</th>
-                                    <th>Laboratory</th>
-                                    <th>Time In</th>
-                                    <th>Time Out</th>
-                                    </tr>
-                                </tfoot>
                             </table>
                         </div>
                     </div>
@@ -310,53 +294,45 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="<?php echo base_url('login') ?>">Logout</a>
                 </div>
             </div>
         </div>
     </div>
 <!-- ******************************************************************* -->
- 
+
 <!-- ******************************************************************* -->
 
-    <script>
-        $(document).ready( function () {
-          $('#visitors').DataTable();
-          } );
-    </script>
+<script>
+$(document).ready( function () {
+$('#visitors').DataTable();
+} );
+</script>
+<!-- Bootstrap core JavaScript-->
+<script src="<?=base_url();?>/stemp/vendor/jquery/jquery.min.js"></script>
+<script src="<?=base_url();?>/stemp/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?=base_url();?>/stemp/vendor/font-awesome/js/all.min.js"></script>
+<!--  -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" type="text/javascript"></script>
 
-    <!-- Menu Toggle Script -->
-    <script>
-      $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-      });
-    </script>
+<!--  -->
+<!-- Core plugin JavaScript-->
+<script src="<?=base_url();?>/stemp/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<!-- Custom scripts for all pages-->
+<script src="<?=base_url();?>/stemp/js/sb-admin-2.min.js"></script>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="<?=base_url();?>/stemp/vendor/jquery/jquery.min.js"></script>
-    <script src="<?=base_url();?>/stemp/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="<?=base_url();?>/stemp/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="<?=base_url();?>/stemp/js/sb-admin-2.min.js"></script>
-
-    <!-- time -->
-    <script type="text/javascript">
-    var timestamp = '<?=time();?>';
-    function updateTime(){
-    $('#time').html(Date(timestamp));
-    timestamp++;
-    }
-    $(function(){
-        setInterval(updateTime, 1000);
-    });
-    </script>
-
+<!-- time -->
+<script type="text/javascript">
+var timestamp = '<?=time();?>';
+function updateTime(){
+$('#time').html(Date(timestamp));
+timestamp++;
+}
+$(function(){
+setInterval(updateTime, 1000);
+});
+</script>
 </body>
 </html>

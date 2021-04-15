@@ -1,37 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+  <html>
+  <head>
+  <title>Professor</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script>
 
-<head>
+   <!-- Custom fonts for this template-->
+   <link href="<?=base_url();?>/stemp/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+     <link
+         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+         rel="stylesheet">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Professors</title>
-<!--  -->
-<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script> -->
-    <!--  -->
-    <!-- Custom fonts for this template-->
-    <link href="<?=base_url();?>/stemp/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="<?=base_url();?>/stemp/css/sb-admin-2.min.css" rel="stylesheet">
+     <!-- Custom styles for this template-->
+     <link href="<?=base_url();?>/stemp/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
-
 <body id="page-top">
-
+ <!-- Content-->
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -41,9 +28,9 @@
                 <a class="d-flex align-items-center justify-content-center">
                     <li><img src="<?=base_url();?>/stemp/img/taguig.png" style="width: 90px; height: 90px"></li>
                 </a>
-        
+
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-text mx-3">Admin</div>
             </a>
 
@@ -51,11 +38,11 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="http://localhost/clas/public/">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
-            </li>
+            </li> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -74,7 +61,7 @@
             </li>
 
             <!-- Nav Item - Professors Menu -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="<?=base_url();?>/professors">
                     <i class="fas fa-fw fa-user-tie"></i>
                     <span>Professors</span>
@@ -82,7 +69,7 @@
             </li>
 
              <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="<?=base_url();?>/visitors">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Visitors</span>
@@ -98,6 +85,12 @@
             </div>
 
             <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="<?=base_url();?>/schedules">
+                    <i class="fas fa-fw fa-calendar"></i>
+                    <span>Schedules</span></a>
+            </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="<?=base_url();?>/courses">
                 <!-- <a href="<?=base_url();?>/courses" class="list-group-item list-group-item-action bg-light"><i class="fas fa-address-card"></i> Course</a> -->
@@ -172,14 +165,14 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Mr. Lim</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
                                 <img class="img-profile rounded-circle"
                                     src="<?=base_url();?>/stemp/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <!-- <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
@@ -191,7 +184,7 @@
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Activity Log
                                 </a>
-                                <div class="dropdown-divider"></div>
+                                <div class="dropdown-divider"></div> -->
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -205,217 +198,137 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-               <!-- Page Content -->
-               <div class="container-fluid">
+                <!-- <div class="container-fluid">
 
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Professor's Record</h1>
-                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                </div>
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Subjects/h1>
 
+                    </div> -->
 
-                  <!-- DataTales Example -->
-                  <div class="card shadow mb-4">
-                      <div class="card-header py-3">
-                          <h6 class="m-0 font-weight-bold text-primary">Add Professor
-                              <a href="<?php echo base_url('professors/create') ?>" class="btn btn-sm btn-success">Create</a>
+                    <div class="container-fluid">
 
-                          </h6>
-                          
-                      </div>
-                      <div class="card-body">
-                          <div class="table-responsive">
-                              <table class="table table-bordered" id="professors" width="100%" cellspacing="0">
-                                  <thead>
-                                  <tr class="text-center">
-                                    <th>Faculty Code</th>
-                                    <th>Faculty Name</th>
-                                    <th>Action</th>
-                                  </tr>
-                                      
-                                  </thead>
-                                  <tbody>
-                                    <?php if($professors): ?>
-                                    <?php foreach($professors as $professor): ?>
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <h1 class="h3 mb-0 text-gray-800">Professor's Record</h1>
+                            <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                    class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
+                        </div>
+
+                        <!-- data example -->
+                        <div class="card shadow mb-4">
+                          <div class="card-header py-3" >
+                              <h6 class="m-0 font-weight-bold text-primary">
+                                  <a href="<?php echo base_url('professors/create') ?>" class="btn btn-sm btn-success">Create</a>
+
+                              </h6>
+
+                          </div>
+                          <div class="card-body">
+                            <div class="table-responsive">
+                              <!-- <a href="<?php echo base_url('professors/create') ?>" class="btn btn-sm btn-success">Create</a> -->
+                              <!-- <div class="row mt-3"> -->
+                                <table class="table table-bordered" id="professors" width="100%" cellspacing="0">
+                                   <thead>
                                     <tr class="text-center">
-                                        <td><?php echo $professor['faculty_code']; ?></td>
-                                        <td><?php echo $professor['faculty_name']; ?></td>
-                                        <td>
-                                         
-                                         <!-- <a data-toggle="modal" data-target="#editModal" class="btn btn-sm btn-success" >Edit</a> -->
-                                         <a data-toggle="modal" data-target="#editModal" href="<?php echo base_url('professors/edit/'.$professor['id']);?>" class="btn btn-sm btn-success">Edit</a>
+                                         <th>Faculty Code</th>
+                                         <th>Faculty Name</th>
+                                         <th>Action</th>
+                                      </tr>
+                                   </thead>
+                                   <tbody>
+                                      <?php if($professors): ?>
+                                      <?php foreach($professors as $professor): ?>
+                                    <tr class="text-center">
+                                         <td><?php echo $professor['faculty_code']; ?></td>
+                                         <td><?php echo $professor['faculty_name']; ?></td>
+                                         <td>
+                                          <a href="<?php echo base_url('professors/edit/'.$professor['id']);?>" class="btn btn-sm btn-success">Edit</a>
                                           <a href="<?php echo base_url('professors/delete/'.$professor['id']);?>" class="btn btn-sm btn-danger">Delete</a>
                                           </td>
                                       </tr>
-                                    <?php endforeach; ?>
-                                    <?php endif; ?>
-                                </tbody>
-                                  <tfoot>
-                                  <tr class="text-center">
-                                    <th>Faculty Code</th>
-                                    <th>Faculty Name</th>
-                                    <th>Action</th>
-                                  </tr>
-                                  </tfoot>
-                              </table>
+                                     <?php endforeach; ?>
+                                     <?php endif; ?>
+                                   </tbody>
+                                 </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /#page-content-wrapper -->
+
+                      </div>
+                      <!-- /#wrapper -->
+
+                      <footer class="sticky-footer bg-white">
+                          <div class="container my-auto">
+                              <div class="copyright text-center my-auto">
+                                  <span>Copyright &copy; Beyond Errors for Easy Solution 2020</span>
+                              </div>
+                          </div>
+                      </footer>
+                      <!-- End of Footer -->
+
+                    </div>
+                    <!-- End of Content Wrapper -->
+
+                    </div>
+                    <!-- End of Page Wrapper -->
+
+                    <!-- Scroll to Top Button-->
+                    <a class="scroll-to-top rounded" href="#page-top">
+                    <i class="fas fa-angle-up"></i>
+                    </a>
+
+                    <!-- Logout Modal-->
+                    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">×</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                          <div class="modal-footer">
+                              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                              <a class="btn btn-primary" href="#">Logout</a>
                           </div>
                       </div>
-                  </div>
-
-              </div>
-              <!-- /.container-fluid -->
-
-              </div>
-              <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Beyond Errors for Easy Solution 2020</span>
                     </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+                    </div>
+                    <!-- content -->
 
-        </div>
-        <!-- End of Content Wrapper -->
+<script>
+$(document).ready( function () {
+$('#professors').DataTable();
+} );
+</script>
+<!-- Bootstrap core JavaScript-->
+<script src="<?=base_url();?>/stemp/vendor/jquery/jquery.min.js"></script>
+<script src="<?=base_url();?>/stemp/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?=base_url();?>/stemp/vendor/font-awesome/js/all.min.js"></script>
+<!--  -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" type="text/javascript"></script>
 
-    </div>
-    <!-- End of Page Wrapper -->
+<!--  -->
+<!-- Core plugin JavaScript-->
+<script src="<?=base_url();?>/stemp/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+<!-- Custom scripts for all pages-->
+<script src="<?=base_url();?>/stemp/js/sb-admin-2.min.js"></script>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- edit modal -->
-    <div class="modal fade" id="editModal" tabindex="2" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h6>Note: Please complete the details below</h6>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                    <br>
-                            <?= \Config\Services::validation()->listErrors(); ?>
-
-                            <span class="d-none alert alert-success mb-3" id="res_message"></span>
-
-                </div>
-                <div class="modal-body">
-                <div class="row-center">
-                            <div class="col-md-9">
-                                <form action="<?php echo base_url('professors/update');?>" name="professor_form" id="professor_form" method="professor" accept-charset="utf-8">
-
-                                <input type="hidden" name="id" class="form-control" id="id" value="<?php echo $professor['id'] ?>">
-
-
-                                <div class="form-group">
-                                    <label for="faculty_code">Faculty Code</label>
-                                    <input type="text" name="faculty_code" class="form-control" id="faculty_code" placeholder="Please enter faculty_code" value="<?php echo $professor['faculty_code'] ?>">
-
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="faculty_name">Faculty Name</label>
-                                    <input type="text" name="faculty_name" class="form-control" id="faculty_name" placeholder="Please enter faculty_name" value="<?php echo $professor['faculty_name'] ?>">
-
-                                </div>
-
-                                </form>
-                            </div>
-
-                            </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <button type="submit" id="send_form" class="btn btn-success">Update</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!--/edit modal -->
-
-    <script>
-    $(document).ready( function () {
-      $('#professors').DataTable();
-     } );
-   </script>
-
-    <script>
-        if ($("#professor_form").length > 0) {
-            $("#professor_form").validate({
-
-          rules: {
-            title: {
-              required: true,
-            },
-
-            description: {
-              required: true,
-            },
-          },
-          messages: {
-
-            title: {
-              required: "Please enter title",
-            },
-            description: {
-              required: "Please enter description",
-            },
-          },
-        })
-      }
-    </script>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="<?=base_url();?>/stemp/vendor/jquery/jquery.min.js"></script>
-    <script src="<?=base_url();?>/stemp/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="<?=base_url();?>/stemp/vendor/font-awesome/js/all.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="<?=base_url();?>/stemp/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="<?=base_url();?>/stemp/js/sb-admin-2.min.js"></script>
-
-    <!-- time -->
-    <script type="text/javascript">
-    var timestamp = '<?=time();?>';
-    function updateTime(){
-    $('#time').html(Date(timestamp));
-    timestamp++;
-    }
-    $(function(){
-        setInterval(updateTime, 1000);
-    });
-    </script>
-
+<!-- time -->
+<script type="text/javascript">
+var timestamp = '<?=time();?>';
+function updateTime(){
+$('#time').html(Date(timestamp));
+timestamp++;
+}
+$(function(){
+setInterval(updateTime, 1000);
+});
+</script>
 </body>
 </html>

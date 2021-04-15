@@ -28,9 +28,9 @@
                 <a class="d-flex align-items-center justify-content-center">
                     <li><img src="<?=base_url();?>/stemp/img/taguig.png" style="width: 90px; height: 90px"></li>
                 </a>
-        
+
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-text mx-3">Admin</div>
             </a>
 
@@ -38,11 +38,11 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="http://localhost/clas/public/">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
-            </li>
+            </li> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -69,7 +69,7 @@
             </li>
 
              <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="<?=base_url();?>/visitors">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Visitors</span>
@@ -86,6 +86,12 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
+                <a class="nav-link" href="<?=base_url();?>/schedules">
+                    <i class="fas fa-fw fa-calendar"></i>
+                    <span>Schedules</span></a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="<?=base_url();?>/courses">
                 <!-- <a href="<?=base_url();?>/courses" class="list-group-item list-group-item-action bg-light"><i class="fas fa-address-card"></i> Course</a> -->
                     <i class="fas fa-fw fa-address-card"></i>
@@ -93,7 +99,7 @@
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="<?=base_url();?>/subjects">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Subjects</span></a>
@@ -159,14 +165,14 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Mr. Lim</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
                                 <img class="img-profile rounded-circle"
                                     src="<?=base_url();?>/stemp/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <!-- <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
@@ -178,7 +184,7 @@
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Activity Log
                                 </a>
-                                <div class="dropdown-divider"></div>
+                                <div class="dropdown-divider"></div> -->
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -196,15 +202,15 @@
 
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Subjects/h1>
-                        
+
                     </div> -->
 
                     <div class="container-fluid">
 
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">Subject Record</h1>
-                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                    class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                            <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                    class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
                         </div>
 
                         <!-- data example -->
@@ -214,7 +220,7 @@
                                   <a href="<?php echo base_url('subjects/create') ?>" class="btn btn-sm btn-success">Create</a>
 
                               </h6>
-                              
+
                           </div>
                           <div class="card-body">
                             <div class="table-responsive">
@@ -240,13 +246,6 @@
                                   <?php endforeach; ?>
                                   <?php endif; ?>
                                 </tbody>
-                                <tfoot>
-                                    <tr class="text-center">
-                                      <th>Subject Code</th>
-                                      <th>Subject Name</th>
-                                      <th>Action</th>
-                                    </tr>
-                                </tfoot>
                               </table>
                             </div>
                           </div>
@@ -257,7 +256,7 @@
                <!-- Page Content -->
 
               <!-- /.container-fluid -->
-            
+
 
         </div>
         <!-- End of Main Content -->
@@ -297,13 +296,13 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="<?php echo base_url('login') ?>">Logout</a>
                 </div>
             </div>
         </div>
     </div>
  <!-- content -->
- 
+
     <script>
         $(document).ready( function () {
         $('#subjects').DataTable();

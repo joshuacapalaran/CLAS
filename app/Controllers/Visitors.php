@@ -34,7 +34,7 @@ class Visitors extends Controller
             'visitor_lab' => $this->request->getVar('visitor_lab'),
             'time_in' => date('Y-m-d H:i:s'),
             // 'firstname'  => $this->request->getVar('firstname'),
-            ];
+          ];
 
         $save = $model->insert($data);
 
@@ -64,7 +64,7 @@ class Visitors extends Controller
 
               ];
               $save = $model->update($id ,$data);
-            
+
               return redirect()->to( base_url('visitors') );
         } else {
 

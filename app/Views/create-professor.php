@@ -40,7 +40,7 @@
                 <a class="d-flex align-items-center justify-content-center">
                     <li><img src="<?=base_url();?>/stemp/img/taguig.png" style="width: 90px; height: 90px"></li>
                 </a>
-        
+
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-text mx-3">Admin</div>
@@ -50,11 +50,11 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
-            </li>
+            </li> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -73,7 +73,7 @@
             </li>
 
             <!-- Nav Item - Professors Menu -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="<?=base_url();?>/professors">
                     <i class="fas fa-fw fa-user-tie"></i>
                     <span>Professors</span>
@@ -81,7 +81,7 @@
             </li>
 
              <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="<?=base_url();?>/visitors">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Visitors</span>
@@ -97,6 +97,11 @@
             </div>
 
             <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="<?=base_url();?>/schedules">
+                    <i class="fas fa-fw fa-calendar"></i>
+                    <span>Schedules</span></a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?=base_url();?>/courses">
                 <!-- <a href="<?=base_url();?>/courses" class="list-group-item list-group-item-action bg-light"><i class="fas fa-address-card"></i> Course</a> -->
@@ -170,7 +175,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Mr. Lim</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
                                 <img class="img-profile rounded-circle"
                                     src="<?=base_url();?>/stemp/img/undraw_profile.svg">
                             </a>

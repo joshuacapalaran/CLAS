@@ -1,48 +1,90 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-    <link href="<?=base_url();?>/stemp/css/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <link href="<?=base_url();?>/stemp/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?=base_url();?>/stemp/css/style.css" rel="stylesheet" type="text/css">
     <title>Login</title>
   </head>
-  <style>
-    body {background-image: url('<?=base_url();?>/stemp/img/bg.jpg');}
-  </style>
-  <body>
 
-    <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="col-6">
-              <a class="d-flex align-items-center justify-content-center">
-                  <img src="<?=base_url();?>/stemp/img/taguig.png" style="width: 200px; height: 200px">
-              </a>
-                <!-- <h1>Sign In</h1> -->
-                <?php if(session()->getFlashdata('msg')):?>
-                    <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
-                <?php endif;?>
-                <form action="<?= base_url() ?>/login/auth" method="post">
-                    <div class="mb-3">
-                        <label for="InputForEmail" class="form-label"><i class="fas fa-envelope"></i> E-mail Address</label>
-                        <input type="email" name="email" class="form-control" id="InputForEmail" value="<?= set_value('email') ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="InputForPassword" class="form-label"><i class="fas fa-lock"></i> Password</label>
-                        <input type="password" name="password" class="form-control" id="InputForPassword">
-                    </div>
-                    <center><button type="submit" class="btn btn-outline-danger">Login</button></center>
-                </form>
-            </div>
+<body>
 
-        </div>
+<div class="container" id="container">
+<div class="form-container sign-up-container">
+
+<form action="<?= base_url() ?>/register/save" method="post">
+  <h1>Create Account</h1>
+  <?php if(isset($validation)):?>
+      <div class="alert alert-danger"><?= $validation->listErrors() ?></div>
+  <?php endif;?>
+  <!-- <div class="social-container">
+    <a href="#" class="social"><i class="fa fa-facebook"></i></a>
+    <a href="#" class="social"><i class="fa fa-google"></i></a>
+    <a href="#" class="social"><i class="fa fa-linkedin"></i></a>
+  </div> -->
+  <span>Fill out the form</span>
+  <input type="text" name="name" placeholder="Name" id="InputForName" value="<?= set_value('name') ?>">
+  <input type="email" name="email" placeholder="Email" id="InputForEmail" value="<?= set_value('email') ?>">
+  <input type="password" name="password" placeholder="Password" id="InputForPassword">
+  <input type="password" name="cofpassword" placeholder="Confirm Password" id="InputForConfPassword">
+  <button>SignUp</button>
+</form>
+</div>
+<div class="form-container sign-in-container">
+  
+  <form action="<?= base_url() ?>/login/auth" method="post">
+    <h1>Sign In</h1>
+    <!-- <div class="social-container">
+    <a href="#" class="social"><i class="fa fa-facebook"></i></a>
+    <a href="#" class="social"><i class="fa fa-google"></i></a>
+    <a href="#" class="social"><i class="fa fa-linkedin"></i></a>
+  </div> -->
+  <span>use your account</span>
+  <?php if(session()->getFlashdata('msg')):?>
+    <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
+  <?php endif;?>
+  <input type="email" name="email" placeholder="Email" id="InputForEmail" value="">
+  <input type="password" name="password" placeholder="Password" id="InputForPassword">
+  <a href="#">Forgot Your Password</a>
+
+  <button type="submit">Sign In</button>
+  </form>
+</div>
+<div class="overlay-container">
+  <div class="overlay">
+    <div class="overlay-panel overlay-left">
+      <h1>Welcome Back!</h1>
+      <p>To keep connected with us please login with your personal info</p>
+      <button class="ghost" id="signIn">Sign In</button>
     </div>
+    <div class="overlay-panel overlay-right">
+      <img src="<?= base_url() ?>/stemp/img/puplogo.ico" style="width: 120px; height: 120px">
+      <h1>C.L.S.A.M.S</h1>
+      <p>Enter your details and start journey with us</p>
+      <button class="ghost" id="signUp" href="<?=base_url();?>/app/Views/register.php">Sign Up</button>
+    </div>
+  </div>
+</div>
+</div>
 
-    <!-- Popper.js first, then Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-  </body>
+<script type="text/javascript">
+  const signUpButton = document.getElementById('signUp');
+  const signInButton = document.getElementById('signIn');
+  const container = document.getElementById('container');
+
+  signUpButton.addEventListener('click', () => {
+    container.classList.add("right-panel-active");
+  });
+  signInButton.addEventListener('click', () => {
+    container.classList.remove("right-panel-active");
+  });
+</script>
+
+
+</body>
 </html>

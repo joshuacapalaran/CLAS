@@ -245,6 +245,13 @@
                                   <?php endforeach; ?>
                                   <?php endif; ?>
                                 </tbody>
+                                <footer style="background-color: RED">
+                                    <tr class="text-center">
+                                      <!-- <th>Subject Code</th> -->
+                                      <th>Course</th>
+                                      <th>Action</th>
+                                    </tr>
+                                </footer>
                               </table>
                             </div>
                           </div>

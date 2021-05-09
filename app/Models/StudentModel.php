@@ -7,5 +7,11 @@ class StudentModel extends Model
 {
     protected $table = 'students';
 
-    protected $allowedFields = ['studentnumber', 'lastname', 'firstname', 'm_initial', 'course_id', 'year', 'pcnum', 'updated_at'];
+    protected $allowedFields = ['studentnumber', 'lastname', 'firstname', 'm_initial', 'course_id', 'year', 'pcnum', 'updated_at', 'deleted_at'];
+    // protected $useSoftDeletes = true;
+
+    // public function view()
+    // {
+    //   return $this->findAll();
+    // }
 }

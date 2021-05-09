@@ -11,7 +11,7 @@ class Courses extends Controller
 
         $model = new CourseModel();
 
-        $data['courses'] = $model->orderBy('id', 'DESC')->findAll();
+        $data['courses'] = $model->view();
 
         return view('courses', $data);
     }
@@ -59,7 +59,7 @@ class Courses extends Controller
 
         $data = [
             'course' => $this->request->getVar('course'),
-          
+
             'updated_at' => date('Y-m-d H:i:s'),
             ];
 
@@ -70,11 +70,8 @@ class Courses extends Controller
 
     public function delete($id = null)
     {
-
      $model = new CourseModel();
-
      $data['course'] = $model->where('id', $id)->delete();
-
      return redirect()->to( base_url('courses') );
     }
 }

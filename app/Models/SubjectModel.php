@@ -7,8 +7,14 @@ class SubjectModel extends Model
 {
     protected $table = 'subjects';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['subject_code', 'subject_name', 'updated_at'];
-    //
+    protected $allowedFields = ['subject_code', 'subject_name', 'updated_at', 'deleted_at'];
+    protected $useSoftDeletes = true;
+
+    public function view()
+    {
+      return $this->findAll();
+    }
+
     public function showsec()
     {
       $this->select('*');

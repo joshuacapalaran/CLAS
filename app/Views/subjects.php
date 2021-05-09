@@ -51,7 +51,12 @@
             <div class="sidebar-heading">
                 Interface
             </div>
-
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="<?=base_url();?>/students/create">
+                    <i class="fa fa-address-book" aria-hidden="true"></i>
+                    <span>Registration</span>
+                </a>
+            </li>
             <!-- Nav Item - Students Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<?=base_url();?>/students">
@@ -88,7 +93,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?=base_url();?>/schedules">
                     <i class="fas fa-fw fa-calendar"></i>
-                    <span>Schedules</span></a>
+                    <span>Schedule Subject</span></a>
             </li>
 
             <li class="nav-item">
@@ -240,7 +245,8 @@
                                       <td><?php echo $subject['subject_name']; ?></td>
                                       <td>
                                         <a href="<?php echo base_url('subjects/edit/'.$subject['id']);?>" class="btn btn-sm btn-success">Edit</a>
-                                        <a href="<?php echo base_url('subjects/delete/'.$subject['id']);?>" class="btn btn-sm btn-danger">Delete</a>
+                                        <!-- <a href="<?php echo base_url('subjects/delete/'.$subject['id']);?>" class="btn btn-sm btn-danger">Delete</a> -->
+                                        <a href="#" data-toggle="modal" data-target="#deleteModal" class="btn btn-sm btn-danger">Delete</a>
                                         </td>
                                     </tr>
                                   <?php endforeach; ?>
@@ -297,6 +303,26 @@
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <a class="btn btn-primary" href="<?php echo base_url('login') ?>">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Modal-->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Do you want to delete the data?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Yes" below if you are ready to delete the data.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="<?php echo base_url('subjects/delete/'.$subject['id']);?>">Yes</a>
                 </div>
             </div>
         </div>

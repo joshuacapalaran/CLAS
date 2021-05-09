@@ -64,7 +64,12 @@
             <div class="sidebar-heading">
                 Interface
             </div>
-
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="<?=base_url();?>/students/create">
+                    <i class="fa fa-address-book" aria-hidden="true"></i>
+                    <span>Registration</span>
+                </a>
+            </li>
             <!-- Nav Item - Students Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<?=base_url();?>/students">
@@ -101,7 +106,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?=base_url();?>/schedules">
                     <i class="fas fa-fw fa-calendar"></i>
-                    <span>Schedules</span></a>
+                    <span>Schedule Subject</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?=base_url();?>/courses">
@@ -243,9 +248,9 @@
                               <div class="form-group">
                                 <label for="visitor_lab" >Laboratory</label>
                                 <select name="visitor_lab" id="visitor_lab" class="form-control" required>
-                                  <option value="">-- Please Select Laboratory --</option>
-                                  <option value='Aboitiz Laboaratory'>Aboitiz Laboaratory</option>
-                                  <option value='DOST Laboratory'>DOST Laboratory</option>
+                                  <option>-- Please Select Laboratory --</option>
+                                  <option value="dost">DOST Laboratory</option>
+                                  <option value="aboitiz">Aboitiz Laboratory</option>
                                 </select>
 
                               </div>

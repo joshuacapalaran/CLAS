@@ -7,5 +7,11 @@ class ProfessorModel extends Model
 {
     protected $table = 'professors';
 
-    protected $allowedFields = ['faculty_code', 'faculty_name', 'updated_at'];
+    protected $allowedFields = ['faculty_code', 'faculty_name', 'updated_at', 'deleted_at'];
+    protected $useSoftDeletes = true;
+
+    public function view()
+    {
+      return $this->findAll();
+    }
 }

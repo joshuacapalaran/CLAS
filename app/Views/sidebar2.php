@@ -64,7 +64,12 @@
             <div class="sidebar-heading">
                 Interface
             </div>
-
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="<?=base_url();?>/students/create">
+                    <i class="fa fa-address-book" aria-hidden="true"></i>
+                    <span>Registration</span>
+                </a>
+            </li>
             <!-- Nav Item - Students Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<?=base_url();?>/students">

@@ -1,26 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
+  <title>Laboratoryss</title>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Add Professor</title>
-    <!--  -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script> -->
-    <!--  -->
-    <!-- Custom fonts for this template-->
-    <link href="<?=base_url();?>/stemp/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom fonts for this template-->
+  <link href="<?=base_url();?>/stemp/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -29,13 +17,13 @@
     <link href="<?=base_url();?>/stemp/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
-
-<body id="page-top">
-
+<body>
+ <!-- Content-->
     <!-- Page Wrapper -->
     <div id="wrapper">
 
         <!-- Sidebar -->
+        <!-- <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar"> -->
         <ul class="navbar-nav sidebar sidebar-dark accordion" style="background-color: rgb(128, 0, 0);" id="accordionSidebar">
                 <a class="d-flex align-items-center justify-content-center">
                     <li><img src="<?=base_url();?>/stemp/img/taguig.png" style="width: 90px; height: 90px"></li>
@@ -78,7 +66,7 @@
             </li>
 
             <!-- Nav Item - Professors Menu -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="<?=base_url();?>/professors">
                     <i class="fas fa-fw fa-user-tie"></i>
                     <span>Professors</span>
@@ -107,11 +95,18 @@
                     <i class="fas fa-fw fa-calendar"></i>
                     <span>Schedule Subject</span></a>
             </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="<?=base_url();?>/labs">
+                    <i class="fas fa-fw fa-tv"></i>
+                    <span>Schedule Laboratory</span></a>
+            </li>
+
             <li class="nav-item">
-                <a class="nav-link" href="<?=base_url();?>/courses">
-                <!-- <a href="<?=base_url();?>/courses" class="list-group-item list-group-item-action bg-light"><i class="fas fa-address-card"></i> Course</a> -->
+                <a class="nav-link" href="<?=base_url();?>/labs">
+                <!-- <a href="<?=base_url();?>/labs" class="list-group-item list-group-item-action bg-light"><i class="fas fa-address-card"></i> lab</a> -->
                     <i class="fas fa-fw fa-address-card"></i>
-                    <span>Courses</span></a>
+                    <span>labs</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
@@ -147,6 +142,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
+                    <!-- nan dito dati yung topbar search -->
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
@@ -214,49 +210,53 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <h5 class="h5 mb-0 text-gray-800"><a href="<?=base_url();?>/professors"> List of Professors</a> > Add Professor</h5>
+                    <h5 class="h5 mb-0 text-gray-800"><a href="<?=base_url();?>/labs"> List of Laboratory</a> > Edit Laboratory</h5>
                     <!-- data -->
                    <div class="card shadow mb-4">
                             <div class="card-header py-3">
                                 <h6>Note: Please complete the details below</h6>
                             </div>
-                        <div class="container">
+                      <div class="container">
                             <br>
                             <?= \Config\Services::validation()->listErrors(); ?>
 
                             <span class="d-none alert alert-success mb-3" id="res_message"></span>
 
                             <div class="row">
-                            <div class="col-md-9">
-                                <form action="<?php echo base_url('professors/store');?>" name="professor_form" id="professor_form" method="professor" accept-charset="utf-8">
+                              <div class="col-md-9">
+                                <form action="<?php echo base_url('labs/update');?>" name="lab_form" id="lab_form" method="lab" accept-charset="utf-8">
 
-                                <div class="form-group">
-                                    <label for="faculty_code">Faculty Code</label>
-                                    <input type="text" name="faculty_code" class="form-control" id="faculty_code" placeholder="Please enter faculty code" required>
+                                  <input type="hidden" name="id" class="form-control" id="id" value="<?php echo $lab['id'] ?>">
 
-                                </div>
 
-                                <div class="form-group">
-                                    <label for="faculty_name">Faculty Name</label>
-                                    <input type="text" name="faculty_name" class="form-control" id="faculty_name" placeholder="Please enter faculty name" required>
+                                  <div class="form-group">
+                                    <label for="lab">Laboratory</label>
+                                    <input type="text" name="lab" class="form-control" id="lab" placeholder="Please enter lab" value="<?php echo $lab['lab'] ?>">
 
-                                </div>
+                                  </div>
 
-                                <div class="form-group">
-                                <button type="submit" id="send_form" class="btn btn-success">Submit</button>
-                                </div>
+                                  <!-- tinanggal ko muna yung section dito kasi may error -->
+
+                                  <div class="form-group">
+                                  <button type="submit" id="send_form" class="btn btn-success">Submit</button>
+                                  </div>
 
                                 </form>
-                            </div>
+                              </div>
 
                             </div>
 
                         </div>
-                        <!-- /.container-fluid -->
-                    </div>
-                 </div>
-            </div>
-            <!-- End of Main Content -->
+
+                      <!-- Page Content -->
+                   </div>
+                </div>
+
+
+              <!-- /.container-fluid -->
+
+             </div>
+              <!-- End of Main Content -->
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
@@ -298,36 +298,37 @@
             </div>
         </div>
     </div>
+ <!-- content -->
+ <script>
+   if ($("#lab_form").length > 0) {
+      $("#lab_form").validate({
 
-    <script>
-        if ($("#professor_form").length > 0) {
-            $("#professor_form").validate({
+    rules: {
+      title: {
+        required: true,
+      },
 
-          rules: {
-            title: {
-              required: true,
-            },
+      description: {
+        required: true,
+      },
+    },
+    messages: {
 
-            description: {
-              required: true,
-            },
-          },
-          messages: {
+      title: {
+        required: "Please enter title",
+      },
+      description: {
+        required: "Please enter description",
+      },
+    },
+  })
+}
+</script>
 
-            title: {
-              required: "Please enter title",
-            },
-            description: {
-              required: "Please enter description",
-            },
-          },
-        })
-      }
-    </script>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="<?=base_url();?>/stemp/vendor/jquery/jquery.min.js"></script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="<?=base_url();?>/stemp/vendor/jquery/jquery.min.js"></script>
     <script src="<?=base_url();?>/stemp/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?=base_url();?>/stemp/vendor/font-awesome/js/all.min.js"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="<?=base_url();?>/stemp/vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -346,7 +347,5 @@
         setInterval(updateTime, 1000);
     });
     </script>
-
 </body>
-
 </html>

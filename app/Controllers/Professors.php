@@ -11,7 +11,7 @@ class Professors extends Controller
 
         $model = new ProfessorModel();
 
-        $data['professors'] = $model->orderBy('id', 'DESC')->findAll();
+        $data['professors'] = $model->view();
 
         return view('professors', $data);
     }

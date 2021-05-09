@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Course</title>
+  <title>Add Laboratory</title>
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
@@ -51,7 +51,12 @@
             <div class="sidebar-heading">
                 Interface
             </div>
-
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="<?=base_url();?>/students/create">
+                    <i class="fa fa-address-book" aria-hidden="true"></i>
+                    <span>Registration</span>
+                </a>
+            </li>
             <!-- Nav Item - Students Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<?=base_url();?>/students">
@@ -88,9 +93,16 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?=base_url();?>/schedules">
                     <i class="fas fa-fw fa-calendar"></i>
-                    <span>Schedules</span></a>
+                    <span>Schedule Subject</span></a>
             </li>
+
             <li class="nav-item active">
+                <a class="nav-link" href="<?=base_url();?>/labs">
+                    <i class="fas fa-fw fa-tv"></i>
+                    <span>Schedule Laboratory</span></a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="<?=base_url();?>/courses">
                 <!-- <a href="<?=base_url();?>/courses" class="list-group-item list-group-item-action bg-light"><i class="fas fa-address-card"></i> Course</a> -->
                     <i class="fas fa-fw fa-address-card"></i>
@@ -198,53 +210,85 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <h5 class="h5 mb-0 text-gray-800"><a href="<?=base_url();?>/courses"> List of Courses</a> > Edit Course</h5>
+                    <h5 class="h5 mb-0 text-gray-800"><a href="<?=base_url();?>/labs"> List of Laboratories</a> > Add Laboratory</h5>
                     <!-- data -->
                    <div class="card shadow mb-4">
                             <div class="card-header py-3">
                                 <h6>Note: Please complete the details below</h6>
                             </div>
+
                       <div class="container">
-                            <br>
-                            <?= \Config\Services::validation()->listErrors(); ?>
+                          <br>
+                          <?= \Config\Services::validation()->listErrors(); ?>
 
-                            <span class="d-none alert alert-success mb-3" id="res_message"></span>
+                          <span class="d-none alert alert-success mb-3" id="res_message"></span>
 
-                            <div class="row">
-                              <div class="col-md-9">
-                                <form action="<?php echo base_url('courses/update');?>" name="course_form" id="course_form" method="course" accept-charset="utf-8">
+                          <div class="row">
+                            <div class="col-md-9">
+                              <form action="<?php echo base_url('labs/store');?>" name="lab_form" id="lab_form" method="lab" accept-charset="utf-8">
 
-                                  <input type="hidden" name="id" class="form-control" id="id" value="<?php echo $course['id'] ?>">
+                                <div class="form-group">
+                                  <label for="datess">Date Schedule</label>
+                                  <input type="date" name="date" class="form-control" id="date" placeholder="Please enter the scheduled lab" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="start_time">Start time</label>
+                                    <input type="time" name="start_time" id="start_time" class="form-control" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="end_time">End Time</label>
+                                    <input type="time" name="end_time" id="end_time" class="form-control" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="lab_used">Laboratory</label>
+                                    <select name="lab_used" id="lab_used" class="form-control" required>
+                                    <option>-- Please Select Laboratory --</option>
+                                    <option value="dost">DOST Laboratory</option>
+                                    <option value="aboitiz">Aboitiz Laboratory</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                  <label for="purpose">Purpose</label>
+                                  <input type="text" name="purpose" class="form-control" id="purpose" placeholder="Please enter remark for the scheduled laboratory" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="remarks">Remarks</label>
+                                    <select name="remarks" id="lab_used" class="form-control" required>
+                                    <option>-- Please Select Laboratory --</option>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
+                                    </select>
+                                </div>
 
 
-                                  <div class="form-group">
-                                    <label for="course">Course</label>
-                                    <input type="text" name="course" class="form-control" id="course" placeholder="Please enter course" value="<?php echo $course['course'] ?>">
 
-                                  </div>
+                                <!-- <div class="form-group">
+                                  <label for="section">Section</label>
+                                  <input type="text" name="section" class= "form-control" id="section" placeholder="Please enter section">
 
-                                  <!-- tinanggal ko muna yung section dito kasi may error -->
+                                </div> -->
 
-                                  <div class="form-group">
-                                  <button type="submit" id="send_form" class="btn btn-success">Submit</button>
-                                  </div>
+                                <div class="form-group">
+                                <button type="submit" id="send_form" class="btn btn-success">Submit</button>
+                                </div>
 
-                                </form>
-                              </div>
-
+                              </form>
                             </div>
 
-                        </div>
-
-                      <!-- Page Content -->
-                   </div>
-                </div>
-
-
+                          </div>
+                      </div>
+                   <!-- Page Content -->
+                  </div>
+              </div>
               <!-- /.container-fluid -->
 
-             </div>
-              <!-- End of Main Content -->
+            </div>
+            <!-- End of Main Content -->
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
@@ -288,8 +332,8 @@
     </div>
  <!-- content -->
  <script>
-   if ($("#course_form").length > 0) {
-      $("#course_form").validate({
+   if ($("#lab_form").length > 0) {
+      $("#lab_form").validate({
 
     rules: {
       title: {

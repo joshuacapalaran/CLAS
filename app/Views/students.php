@@ -51,6 +51,12 @@
             <div class="sidebar-heading">
                 Interface
             </div>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="<?=base_url();?>/students/create">
+                    <i class="fa fa-address-book" aria-hidden="true"></i>
+                    <span>Registration</span>
+                </a>
+            </li>
 
             <!-- Nav Item - Students Menu -->
             <li class="nav-item active">
@@ -87,8 +93,14 @@
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="<?=base_url();?>/schedules">
+                    <i class="fas fa-fw fa-book"></i>
+                    <span>Schedule Subject</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="<?=base_url();?>/labs">
                     <i class="fas fa-fw fa-calendar"></i>
-                    <span>Schedules</span></a>
+                    <span>Schedule Laboratory</span></a>
             </li>
 
             <li class="nav-item">
@@ -244,6 +256,7 @@
                                     <td>
                                         <a href="<?php echo base_url('students/edit/'.$student['id']);?>" class="btn btn-sm btn-success">Edit</a>
                                         <a href="<?php echo base_url('students/delete/'.$student['id']);?>" class="btn btn-sm btn-danger">Delete</a>
+
                                     </td>
                                     </tr>
                                 <?php endforeach; ?>
@@ -300,6 +313,7 @@
             </div>
         </div>
     </div>
+
 
     <script>
     $(document).ready( function () {

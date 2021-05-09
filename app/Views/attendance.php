@@ -51,7 +51,12 @@
             <div class="sidebar-heading">
                 Interface
             </div>
-
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="<?=base_url();?>/students/create">
+                    <i class="fa fa-address-book" aria-hidden="true"></i>
+                    <span>Registration</span>
+                </a>
+            </li>
             <!-- Nav Item - Students Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<?=base_url();?>/students">
@@ -88,7 +93,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="<?=base_url();?>/schedules">
                     <i class="fas fa-fw fa-calendar"></i>
-                    <span>Schedules</span></a>
+                    <span>Schedule Subject</span></a>
             </li>
 
             <li class="nav-item">
@@ -208,7 +213,7 @@
                     <div class="container-fluid">
 
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">Create a Schedule</h1>
+                            <h1 class="h3 mb-0 text-gray-800">Student Attendance</h1>
                             <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                     class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
                         </div>

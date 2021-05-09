@@ -11,7 +11,7 @@ class Subjects extends Controller
 
         $model = new SubjectModel();
 
-        $data['subjects'] = $model->orderBy('id', 'DESC')->findAll();
+        $data['subjects'] = $model->view();
 
         return view('subjects', $data);
     }
